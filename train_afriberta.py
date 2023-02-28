@@ -60,10 +60,7 @@ def main(lang):
         cats = ['negative', 'neutral','positive' ]
         id2label = {x:cats[x].strip() for x in range(len(cats))}
         label2id = {cats[x].strip():x for x in range(len(cats))}
-        if lang == 'multilingual':
-            df = pd.read_csv('data/public_data/TaskB/{}_train.tsv'.format(lang), sep='\t')
-        else:
-            df = pd.read_csv('data/public_data/TaskA/train/{}_train.tsv'.format(lang), sep='\t')
+        df = pd.read_csv('data/new_data/{}_train.tsv'.format(lang), sep='\t')
         df = df.sample(frac= 1.0, random_state= 123)
         print('Language : ',lang)
         print('Data Len : ',len(df))
