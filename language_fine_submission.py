@@ -10,7 +10,7 @@ def main(lang):
     preds = [pip(x)[0]['label'] for x in df.tweet]
     df['pred_label'] = preds
     del df['tweet']
-    df.to_csv('submission/afriberta/pred_{}.tsv'.format(lang), sep='\t', index= False)
+    df.to_csv('submission/language_fine/pred_{}.tsv'.format(lang), sep='\t', index= False)
 
 
 
